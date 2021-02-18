@@ -73,16 +73,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### The add todo button functionality
 
-In App.js -- const [showAddTask, setShowAddTask] = useState(false)
+In App.js -- 
+
+    const [showAddTask, setShowAddTask] = useState(false)
           -- <Header onBtnAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
-In Header.js -- <Button onClick={onBtnAdd} color={showAdd ? 'red' : 'green'} text={showAdd ? 'Close' : 'Add Todo'} />
+In Header.js -- 
+
+    <Button onClick={onBtnAdd} color={showAdd ? 'red' : 'green'} text={showAdd ? 'Close' : 'Add Todo'} />
 
 ### Tasks functionality
 
 ## Showing Tasks
-In App.js -- const[tasks, setTasks] = useState([ {}, {}, {}])
+In App.js -- 
+    
+            const[tasks, setTasks] = useState([ {}, {}, {}])
           -- <Tasks tasks={tasks} />
-In Tasks.js -- const Tasks = ({tasks}) => {
+In Tasks.js -- 
+
+    const Tasks = ({tasks}) => {
                     return (
                         <>
                         {tasks.map((task) => (<h1 key={task.id}>{task.text}</h1>))}
@@ -91,20 +99,31 @@ In Tasks.js -- const Tasks = ({tasks}) => {
             }
 
 ## Deleting Task
-In App.js -- const deleteTask = (id) => {
+In App.js -- 
+        
+        const deleteTask = (id) => {
                 setTasks(tasks.filter((task) => task.id !== id))
         }
             -- <Tasks onDelete={deleteTask}>
-In Task.js -- onClick={() => onDelete(task.id)}
+
+In Task.js -- 
+    
+        onClick={() => onDelete(task.id)}
 
 ## Adding Task
-In App.js -- const addTask = (task) => {
-                const id = Math.floor(Math.random() * 1000) + 1
-                const newTask = {id, ...task}
-                setTasks = {...task, newTask}
-        }
-In App.js -- <Addtask onAdd={addTask} />
+In App.js --
+
+        const addTask = (task) => {
+                        const id = Math.floor(Math.random() * 1000) + 1
+                        const newTask = {id, ...task}
+                        setTasks = {...task, newTask}
+                }
+
+In App.js -- 
+
+        <Addtask onAdd={addTask} />
 In Addtask.js -- 
+
             <!-- onAdd is passed as a prop -->
             const [text, setText] = useState('')
             const [day, setDay] = useState('')
