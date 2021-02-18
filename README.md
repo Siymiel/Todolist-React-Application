@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### NOTES
 
-### The add todo button functionality
+#### The add todo button functionality
 
 In App.js -- 
 
@@ -83,13 +83,20 @@ In Header.js --
 
 ### Tasks functionality
 
-## Showing Tasks
+#### Showing Tasks
 In App.js -- 
     
+         ```
             const[tasks, setTasks] = useState([ {}, {}, {}])
-          -- <Tasks tasks={tasks} />
+        ```
+          -- 
+          ```
+          <Tasks tasks={tasks} />
+          ```
+
 In Tasks.js -- 
 
+    ```
     const Tasks = ({tasks}) => {
                     return (
                         <>
@@ -97,35 +104,45 @@ In Tasks.js --
                         </h1>
                     )
             }
+    ```
 
-## Deleting Task
+#### Deleting Task
 In App.js -- 
         
+        ```
         const deleteTask = (id) => {
                 setTasks(tasks.filter((task) => task.id !== id))
         }
-            -- <Tasks onDelete={deleteTask}>
+        ```
+            -- 
+        ```
+            <Tasks onDelete={deleteTask}>
+        ```
 
 In Task.js -- 
-    
+
+        ```
         onClick={() => onDelete(task.id)}
+        ```
 
-## Adding Task
+#### Adding Task
 In App.js --
-
-        <script>
+        ```
         const addTask = (task) => {
                         const id = Math.floor(Math.random() * 1000) + 1
                         const newTask = {id, ...task}
                         setTasks = {...task, newTask}
-                }
-        </script>
-
+                }   
+        ```
 In App.js -- 
 
+        ```
         <Addtask onAdd={addTask} />
+        ```
+
 In Addtask.js -- 
 
+            ```
             <!-- onAdd is passed as a prop -->
             const [text, setText] = useState('')
             const [day, setDay] = useState('')
@@ -148,3 +165,4 @@ In Addtask.js --
             <form onsubmit={handleSubmit}>
                 <!-- Form code here -->
             </form>
+            ```
