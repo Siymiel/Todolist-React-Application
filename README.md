@@ -113,11 +113,13 @@ In Task.js --
 ## Adding Task
 In App.js --
 
+        <script>
         const addTask = (task) => {
                         const id = Math.floor(Math.random() * 1000) + 1
                         const newTask = {id, ...task}
                         setTasks = {...task, newTask}
                 }
+        </script>
 
 In App.js -- 
 
