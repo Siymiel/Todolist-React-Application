@@ -115,9 +115,9 @@ In App.js --
         }
         ```
             -- 
-        ```
-            <Tasks onDelete={deleteTask}>
-        ```
+        
+            `<Tasks onDelete={deleteTask}>`
+        
 
 In Task.js -- 
 
